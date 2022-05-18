@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hello , {{ user.username }}</h1>
+    <h2>Hello , {{ user.sex }}</h2>
+    {% for post in posts %}
+    <div><p>{{post.author.username}} says: <b>{{post.body}}</b></p></div>
+    {% endfor %}
+
+    <form action="/" method="post">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+
+{% endblock %}
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        {% if title %}
+        <title>{{title}}-Microblog</title>
+        {% else %}
+        <title>Welcome to Microblog</title>
+        {% endif %}
+    </head>
+    <body>
+        <h1>Hello , {{ user.username }}</h1>
+        <h2>Hello , {{ user.sex }}</h2>
+        <h3>Hello , {{ user.sex }}</h3>
+        {% for post in posts %}
+        <div><p>{{post.author.username}} says: <b>{{post.body}}</b></p></div>
+        {% endfor %}
+    </body>
+</html> -->
